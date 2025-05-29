@@ -6,15 +6,6 @@ First, run the development server:
 
 ```bash
 npm run dev
-<<<<<<< HEAD
-=======
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
->>>>>>> eda7b10 (image update)
 ```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.

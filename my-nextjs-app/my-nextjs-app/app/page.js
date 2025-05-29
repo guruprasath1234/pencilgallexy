@@ -4,15 +4,14 @@ import { Button } from "@/components/ui/button";
 import { Card, CardContent } from "@/components/ui/card";
 import { ShoppingCart, Star, Heart, Search, Filter, Sparkles, ArrowRight, Eye } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
 
 const products = [
   {
     id: 1,
-    name: "Pencil",
+    name: "Galaxy Pencil",
     price: "$12.99",
     originalPrice: "$15.99",
-    image: "/product1/item1.jpg",
+    image: "/products/pencil1.png",
     rating: 4.8,
     reviews: 124,
     badge: "BESTSELLER",
@@ -27,7 +26,7 @@ const products = [
     rating: 4.9,
     reviews: 89,
     badge: "NEW",
-    description: "Ultra-smooth sketching experience with stellar"
+    description: "Ultra-smooth sketching experience with stellar precision"
   },
   {
     id: 3,
@@ -99,23 +98,25 @@ export default function Home() {
       </div>
 
       {/* Navigation */}
-     {/* Navigation */}
-<nav className="relative z-10 flex justify-between items-center p-4 md:p-6 backdrop-blur-md bg-white/5 border-b border-white/10">
-  <div className="flex items-center space-x-2">
-    <Sparkles className="w-6 h-6 md:w-8 md:h-8 text-purple-400" />
-    <span className="text-lg md:text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
-      PENCIL GALAXY
-    </span>
-  </div>
-  <div className="flex items-center space-x-2 md:space-x-4">
-
-    <Link href="/auth">
-      <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white shadow-lg text-sm md:text-base rounded-full">
-        <span className="hidden sm:inline">Admin</span> Login
-      </Button>
-    </Link>
-  </div>
-</nav>
+      <nav className="relative z-10 flex justify-between items-center p-6 backdrop-blur-md bg-white/5 border-b border-white/10">
+        <div className="flex items-center space-x-2">
+          <Sparkles className="w-8 h-8 text-purple-400" />
+          <span className="text-xl font-bold bg-gradient-to-r from-purple-400 to-pink-400 bg-clip-text text-transparent">
+            PENCIL GALAXY
+          </span>
+        </div>
+        <div className="flex items-center space-x-4">
+          <Button variant="ghost" size="sm" className="text-white/80 hover:text-white hover:bg-white/10">
+            <Search className="w-90 h-4 mr-2 rounded-3xl"/>
+            Search
+          </Button>
+        <Link href="/auth">
+  <Button className="bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white shadow-lg">
+    Admin Login
+  </Button>
+</Link>
+        </div>
+      </nav>
 
       {/* Hero Section */}
       <section className="relative z-10 flex flex-col items-center text-center space-y-8 py-20">
@@ -145,6 +146,10 @@ export default function Home() {
               <span>EXPLORE COLLECTION</span>
               <ArrowRight className="w-4 h-4 ml-2 group-hover:translate-x-1 transition-transform" />
             </Button>
+            <Button variant="outline" className="border-white/30 text-white hover:bg-white/10 px-8 py-3 rounded-full backdrop-blur-md">
+              <Eye className="w-4 h-4 mr-2" />
+              Watch Demo
+            </Button>
           </div>
         </div>
       </section>
@@ -164,12 +169,12 @@ export default function Home() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-5 gap-6">
             {products.map((product, index) => (
               <div
-                key={product.id1}
+                key={product.id}
                 className="group relative bg-gradient-to-br from-white/10 to-white/5 backdrop-blur-md rounded-2xl p-6 shadow-2xl border border-white/10 hover:border-purple-500/50 transition-all duration-500 transform hover:scale-105 hover:-translate-y-2"
                 style={{
                   animationDelay: `${index * 100}ms`
                 }}
-                onMouseEnter={() => setHoveredProduct(product.id1)}
+                onMouseEnter={() => setHoveredProduct(product.id)}
                 onMouseLeave={() => setHoveredProduct(null)}
               >
                 {/* Badge */}
@@ -179,7 +184,7 @@ export default function Home() {
 
                 {/* Favorite Button */}
                 <button
-                  onClick={() => toggleFavorite(product.id1)}
+                  onClick={() => toggleFavorite(product.id)}
                   className="absolute top-3 right-3 z-10 bg-black/20 backdrop-blur-md rounded-full p-2 hover:bg-black/40 transition-all duration-300"
                 >
                   <Heart
@@ -244,7 +249,7 @@ export default function Home() {
                 <Link href="/product1">
                   <Button
                     className={`w-full bg-gradient-to-r from-purple-600 to-pink-600 hover:from-purple-700 hover:to-pink-700 text-white font-medium py-2 rounded-xl shadow-lg transition-all duration-300 transform ${
-                      hoveredProduct === product.id1 ? 'scale-105 shadow-purple-500/25' : ''
+                      hoveredProduct === product.id ? 'scale-105 shadow-purple-500/25' : ''
                     }`}
                   >
                     <ShoppingCart className="w-4 h-4 mr-10" /> 

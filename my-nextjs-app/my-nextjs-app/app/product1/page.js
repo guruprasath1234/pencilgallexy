@@ -31,7 +31,7 @@ const products = [
     rating: 3.8,
     reviews: 1869,
     boughtCount: "400+",
-    image: "/product1/item5.jpg",
+    image: "/products/lunchbox.png",
     description:
       "Steel Kids Lunch Box with Inner Stainless Steel Insulated Containers. Clip Lock Lid. 700ml, Airtight & Leakproof. Perfect for School or Picnic.",
     delivery: "FREE delivery Saturday, 31 May",
@@ -53,10 +53,10 @@ const products = [
       "Brand": "MILTON"
     },
     images: [
-      "/product1/item5.png",
-      "/product1/item2.jpg",
-      "/product1/item3.jpg",
-      "/product1/item4.jpg"
+      "/products/lunchbox.png",
+      "/products/lunchbox.png",
+      "/products/lunchbox.png",
+      "/products/lunchbox.png"
     ]
   },
 ];

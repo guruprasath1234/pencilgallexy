@@ -17,10 +17,7 @@ import {
   Shield
 } from "lucide-react";
 
-
-
 export default function AuthPage() {
-  const [showAdminAlert, setShowAdminAlert] = useState(false);
   const [isLogin, setIsLogin] = useState(true);
   const [showPassword, setShowPassword] = useState(false);
   const [showConfirmPassword, setShowConfirmPassword] = useState(false);
@@ -34,7 +31,6 @@ export default function AuthPage() {
   const [isLoading, setIsLoading] = useState(false);
   const [particles, setParticles] = useState([]);
 
-  
   // Generate floating particles
   useEffect(() => {
     const newParticles = Array.from({ length: 30 }, (_, i) => ({
